@@ -1,0 +1,158 @@
+@import "var";
+
+.carousel__wrap {
+  padding-top: 54px;
+  background: url(./assets/pattern-bg.svg) no-repeat top center;
+  background-size: contain;
+  min-height: 100%;
+  position: relative;
+
+  &:after {
+    content: "";
+    background-image: url(./assets/pattern-curve.svg);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+  }
+}
+
+.carousel {
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+
+  //&:before {
+  //  content: "";
+  //  position: absolute;
+  //  background: url(./assets/pattern-curve.svg) no-repeat top center;
+  //}
+}
+
+.slide {
+  //width: 254px;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  text-align: center;
+
+  &[data-active] {
+    opacity: 1;
+  }
+}
+
+.btn__wrap {
+  box-shadow: 0 15px 20px -10px rgba(36, 36, 113, 0.0991313);
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+  width: 80px;
+  height: 40px;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.btn {
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &:hover {
+    @include breakpoint(desktop) {
+      cursor: pointer;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    inset: 0;
+    margin: auto;
+  }
+
+  &.btn-prev {
+    &:before {
+      background: url(./assets/icon-prev.svg) no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  &.btn-next {
+    &:before {
+      background: url(./assets/icon-next.svg) no-repeat center;
+      background-size: contain;
+    }
+  }
+}
+
+.slide__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //height: 253px;
+}
+
+.text__block__description {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #202047;
+  margin-bottom: 19px;
+  display: block;
+
+  &:before {
+    content: "";
+    background: url("./assets/pattern-quotes.svg") no-repeat center center;
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    margin: auto;
+    background-size: contain;
+    left: 0;
+    right: 0;
+  }
+}
+
+.text__block__author {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  color: #202047;
+}
+
+.text__block__position {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  color: #b9b9ce;
+}
+
+.slide__pic {
+  margin-bottom: 58px;
+  width: 254px;
+  display: inline-block;
+  box-shadow: (0 4px 4px rgba(0, 0, 0, 0.25));
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}

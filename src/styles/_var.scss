@@ -1,0 +1,11 @@
+
+
+@mixin heading-text {
+  font-family: 'Fraunces';
+  font-weight: 600;
+}
+
+@mixin body-text {
+  font-family: 'Manrope';
+  font-weight: 400;
+}
