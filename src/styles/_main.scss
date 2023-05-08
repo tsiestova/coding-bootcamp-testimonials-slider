@@ -41,6 +41,7 @@
 
   &[data-active] {
     opacity: 1;
+    position: relative;
   }
 }
 
@@ -50,7 +51,7 @@
   display: flex;
   align-items: center;
   position: absolute;
-  bottom: -20px;
+  top: 234px;
   left: 0;
   right: 0;
   margin: auto;
