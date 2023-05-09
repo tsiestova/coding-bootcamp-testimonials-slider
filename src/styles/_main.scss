@@ -1,20 +1,48 @@
-@import "var";
-
 .carousel__wrap {
   padding-top: 54px;
-  background: url(./assets/pattern-bg.svg) no-repeat top center;
-  background-size: contain;
   min-height: 100%;
   position: relative;
 
+  @include breakpoint(desktop) {
+    padding-top: 111px;
+  }
+
+  .layout {
+    position: relative;
+
+    &:before {
+      content: "";
+      background: url(./assets/pattern-bg.svg) no-repeat top center;
+      background-size: contain;
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 100%;
+      height: 308px;
+      right: 0;
+
+      @include breakpoint(desktop) {
+        height: 657px;
+        top: -61px;
+        left: -5px;
+        background-position: right bottom;
+      }
+    }
+  }
+
   &:after {
     content: "";
-    background-image: url(./assets/pattern-curve.svg);
+    background: url(./assets/pattern-curve.svg) no-repeat;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 72px;
+    z-index: -1;
+
+    @include breakpoint(desktop) {
+      height: 151px;
+    }
   }
 }
 
@@ -22,34 +50,33 @@
   position: relative;
   min-height: 100%;
   width: 100%;
-
-  //&:before {
-  //  content: "";
-  //  position: absolute;
-  //  background: url(./assets/pattern-curve.svg) no-repeat top center;
-  //}
 }
 
 .slide {
-  //width: 254px;
   position: absolute;
   top: 0;
   height: 100%;
   opacity: 0;
   transition: opacity 300ms ease;
-  //transition-delay: 200ms;
   text-align: center;
+
+  @include breakpoint(desktop) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+  }
 
   &[data-active] {
     opacity: 1;
     position: relative;
-    //transition-delay: 0ms;
   }
 }
 
 .btn__wrap {
-  box-shadow: 0 15px 20px -10px rgba(36, 36, 113, 0.0991313);
   border-radius: 28px;
+  box-shadow: 0 15px 20px -10px rgba(36, 36, 113, 0.0991313);
   display: flex;
   align-items: center;
   position: absolute;
@@ -62,6 +89,16 @@
   height: 40px;
   justify-content: space-around;
   overflow: hidden;
+
+  @include breakpoint(desktop) {
+    width: 112px;
+    height: 56px;
+    bottom: -30px;
+    top: auto;
+    right: 429px;
+    margin: 0;
+    left: auto;
+  }
 }
 
 .btn {
@@ -83,6 +120,11 @@
     height: 12px;
     inset: 0;
     margin: auto;
+
+    @include breakpoint(desktop) {
+      height: 16px;
+      width: auto;
+    }
   }
 
   &.btn-prev {
@@ -105,7 +147,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  //height: 253px;
 }
 
 .text__block__description {
@@ -117,6 +158,56 @@
   margin-bottom: 19px;
   display: block;
 
+  @include breakpoint(desktop) {
+    font-size: 32px;
+    line-height: 44px;
+    text-align: left;
+    margin-bottom: 32px;
+  }
+}
+
+.text__block__author {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  color: #202047;
+
+  @include breakpoint(desktop) {
+    font-size: 20px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: left;
+    margin-right: 10px;
+  }
+}
+
+.text__block__position {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  color: #b9b9ce;
+
+  @include breakpoint(desktop) {
+    font-size: 20px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+.slide__text__block {
+  position: relative;
+
+  @include breakpoint(desktop) {
+    max-width: 635px;
+    width: 100%;
+    z-index: 1;
+    padding-top: 85px;
+    flex: 1;
+  }
+
   &:before {
     content: "";
     background: url("./assets/pattern-quotes.svg") no-repeat center center;
@@ -127,31 +218,33 @@
     background-size: contain;
     left: 0;
     right: 0;
+    top: -25px;
+
+    @include breakpoint(desktop) {
+      width: 120px;
+      height: 100px;
+      left: 96px;
+      top: 20px;
+      right: auto;
+    }
   }
 }
 
-.text__block__author {
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 20px;
-  text-align: center;
-  color: #202047;
-}
-
-.text__block__position {
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 20px;
-  text-align: center;
-  color: #b9b9ce;
-}
-
 .slide__pic {
-  margin-bottom: 58px;
+  margin-bottom: 83px;
   width: 254px;
   height: 253px;
   display: inline-block;
   box-shadow: (0 4px 4px rgba(0, 0, 0, 0.25));
+
+  @include breakpoint(desktop) {
+    max-width: 540px;
+    width: 100%;
+    height: 540px;
+    margin-bottom: 0;
+    margin-left: -67px;
+    flex: 1;
+  }
 
   img {
     width: 100%;

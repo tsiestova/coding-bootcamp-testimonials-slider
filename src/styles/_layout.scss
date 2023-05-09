@@ -1,12 +1,9 @@
 .layout {
   padding: 0 32px;
 
-  @include breakpoint(tablet) {
-    max-width: 716px;
-    margin: auto;
-  }
-
   @include breakpoint(desktop) {
-    max-width: 1143px;
+    padding: 0 32px;
+    max-width: 1300px;
+    margin: auto;
   }
 }
