@@ -1,7 +1,7 @@
 
 ### Links
 
-- Live Site: [Demo](https://coding-bootcamp-testimonials-slider-kappa-eight.vercel.app/) 
+- Live Site: [Demo](https://coding-bootcamp-testimonials-slider-r15e.vercel.app/) 
 
 ### Built with
 
